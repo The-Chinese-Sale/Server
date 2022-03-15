@@ -10,4 +10,4 @@ const winSchema = new mongoose.Schema({
 })
 const Win = mongoose.model("winners", winSchema);
 
-module.exports(Win, winSchema);
+module.exports(Win, winSchema); 
