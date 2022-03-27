@@ -31,18 +31,16 @@ module.exports.AddOrderToUser = async (req, res) => {
     try {
         const userid = await User.findById(user.id)
         if (userid) {
-
             userid.arr_orders.push(user.arr_orders[0])
+            userid.save();
         }
         else {
             let a = new User(user);
-    
             await a.save();
             console.log(a);
             return res.send(a);
     }
         }
-        
     catch {
         console.log(e);
         return res.status(400).send(e);
